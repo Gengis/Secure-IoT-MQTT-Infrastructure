@@ -1,0 +1,23 @@
+# --- PANEL PRINCIPAL (Admin) ---
+# Tiene permiso total de lectura y escritura en toda la casa
+user panel_admin
+topic readwrite casa/#
+
+# --- SALON ---
+user disp_salon
+# Solo puede publicar (escribir) sus estados
+topic write casa/salon/+/estado
+topic write casa/salon/termostato/temperatura
+# Solo puede leer (suscribirse) comandos dirigidos a el
+topic read casa/salon/+/comando
+
+# --- COCINA ---
+user disp_salon
+# Solo puede publicar (escribir) sus estados
+topic write casa/cocina/ventana/estado
+topic read casa/cocina/luces/comando
+
+# --- HABITACION --- 
+user disp_habitacion
+topic write casa/habitacion/+/estado
+topic read casa/habitacion/+/comando
